@@ -152,6 +152,23 @@ models:
       - name: FUEL_PRICE_USD_PER_L
         data_tests:
           - not_null
+  - name: stg_DEV_SEEDS__DIM_CARBON_TAX_RATES
+    columns:
+      - name: COUNTRY_CD_2CHAR
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["AE", "BE", "CN", "DE", "FR", "KR", "NL", "SG", "US"]
+      - name: COUNTRY_CD_3CHAR
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["ARE", "BEL", "CHN", "DEU", "FRA", "KOR", "NLD", "SGP", "USA"]
+      - name: CARBON_TAX_RATE_USD_PER_TCO2
+        data_tests:
+          - not_null
   - name: stg_RAW__GLOBAL_SUPPLY_CHAIN_RISK_2024_2026
     columns: 
       - name: SHIPMENT_ID
